@@ -1,0 +1,203 @@
+<?php /* Template Name: custom workshops page */ 
+
+get_header(); ?>
+
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', 'page' ); ?>
+				<?php comments_template( '', true ); ?>
+			<?php endwhile; // end of the loop. ?>
+
+		</div><!-- #content -->
+        
+		<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.outer{
+    border: 3px solid #73AD21;
+}
+.floating-box {
+    display: inline-block;
+    margin: 10px;
+    width: 130px;
+    word-wrap: break-word;
+    padding: 10px;
+    vertical-align:top;
+}
+
+
+.floating-TFH-box {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    width: 150px;
+    word-wrap: break-word;
+    border: 1px solid black;
+    vertical-align:top;
+    border-radius: 25px;
+
+ 
+}
+body{
+    text-align: center;
+}
+
+h2 {
+    font-size: 85%;
+    padding: 2px;
+    }
+.main-container{
+    width: 100%;
+    border: 1px solid black;
+    display: inline-block;
+   
+}
+
+h1{
+    color: purple;
+
+}
+
+p{
+    font-size: 100%;
+    font-weight: normal;
+}
+.seeMoreButton{
+    width: 200px;
+	height: 100px;
+	vertical-align:top;
+	cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+	<div class="inner">
+		<div class="floating-box">
+			<input type="radio" id="button1" name="radio" checked="checked" onclick="changeMainContainer()">
+			<h2 id = "TFH Title">16 Hour Touch for Health 1-4 Kinesioloy Workshops</h2> 
+				
+			</div>
+		<div class="floating-box">
+			<input type="radio" id="button2" name="radio" onclick="changeMainContainer()">
+			<h2 id= "TFH Intro">4 Hour Intro to Touch for Health (Not a prerequisit for TFH I)</h2> 
+				
+			</div>
+		<div class="floating-box">
+			<input type="radio" id="button3" name="radio" onclick="changeMainContainer()">
+			<h2 id="Pain Buster">4 Hour Pain Busters 101 (No prerequisite)</h2>
+		</div>
+		<div class="floating-box">
+			<input type="radio" id="button4" name="radio" onclick="changeMainContainer()">
+			<h2 id="advanced">8 Hour Advanced Pain Busters 102 (prerequisite TFH I)</h2>
+		</div>
+	</div>
+
+
+	<div class="main-container inner">
+		<h1 id="title_main_container"> </br> </br> Touch for health </br>  </br> </h1>
+			<h2 id ="desc_main_container"><div class = 'floating-TFH-box'><a href='http://northeasthealing.com/touch-for-health-level-1/'>Touch for Health Level 1</a> </br><p>Learn muscle testing and balance 14 major muscles, alleviate pain, improve posture, enhance vitality, improve mental performance, calm the nervous system and more!</p></div>
+			<div class = 'floating-TFH-box'><a href='http://northeasthealing.com/touch-for-health-level-2/'>Touch for Health Level 2</a> </br><p>By studying the Chinese 5 element theory you will learn to recognize patterns that will reveal one point that balances the entire meridian system. Learn 14 new muscles.</p> </div>
+			<div class = 'floating-TFH-box'><a href='http://northeasthealing.com/touch-for-health-level-3/'>Touch for Health Level 3</a> </br><p>Learn to identify and correct dysfunctional muscles firing patterns when they are shutting down several other reactive muscles. Learn 14 more muscles.</p>  </div>
+			<div class = 'floating-TFH-box'><a href='http://northeasthealing.com/touch-for-health-level-4/'>Touch for Health Level 4</a> </br><p>Going deeper putting it all together, working from a priority menu, reviewing levels 1-4 and learning 42 muscle tests lying and standing.</p>  </div></h2>
+			<p id="3rd line"></br>Click on workshop title for information on schedule and more</br></p>
+
+		<button style= "background-color:purple;" class="seeMoreButton" onclick="location.href='http://northeasthealing.com/registration/';" id = "details button"> Register Now</button>
+		<button style="display: none;" class="seeMoreButton" id = "more info button"> See more details</button>
+	</div>
+
+
+
+		<script type="text/javascript">
+
+			//Variables for the different texts that will display in the main container for each class selected by the radio button
+
+			var tf1 = "<div class = 'floating-TFH-box'><a href='http://northeasthealing.com/touch-for-health-level-1/'>Touch for Health Level 1</a> </br><p>Learn muscle testing and balance 14 major muscles, alleviate pain, improve posture, enhance vitality, improve mental performance, calm the nervous system and more!</p> </div>" +
+			"<div class = 'floating-TFH-box'><a href='http://northeasthealing.com/touch-for-health-level-2/'>Touch for Health Level 2</a> </br><p>By studying the Chinese 5 element theory you will learn to recognize patterns that will reveal one point that balances the entire meridian system. Learn 14 new muscles.</p> </div>" +
+			"<div class = 'floating-TFH-box'><a href='http://northeasthealing.com/touch-for-health-level-3/'>Touch for Health Level 3</a> </br><p>Learn to identify and correct dysfunctional muscles firing patterns when they are shutting down several other reactive muscles. Learn 14 more muscles.</p> </div>" +
+			"<div class = 'floating-TFH-box'><a href='http://northeasthealing.com/touch-for-health-level-4/'>Touch for Health Level 4</a> </br><p>Going deeper putting it all together, working from a priority menu, reviewing levels 1-4 and learning 42 muscle tests lying and standing.</p> </div>" 
+			var tf2 = "<p></br>This is a half day of transformative learning, coupled with practical techniques and hands-on practice for quick and easy pain relief you'll be able to implement immediately!</p>";
+			var tf3 = "<p></br>This half day workshop will introduce you to beginning concepts and set you on a path to transforming your practice and the lives of your clients, with pain busting techniques you can use right away!</p>";
+			var tf4 = "<p></br>Advanced Pain Busters is a power-packed, full-day workshop for students who are ready to transform their practice into a pain busting enterprise. </br>Prerequisite: Touch for Health Level I (no CE's available)</p>";
+
+			var main_container_line_3_selection1 = "<p></br>Click on workshop title for information on schedule and more</p></br>"
+			var main_container_line_3_selection2 = "<p></br>Upcoming dates: May 5th, June 2nd, July 7th and Sept. 8th at </br>National American University, Roseville, MN </br> 9 am - 1:00 pm</p>"
+			var main_container_line_3_selection3 = "<p></br>Upcoming dates: May 5th, June 2nd, July 7th and Sept. 8th at </br>National American University, Roseville, MN </br> 2 pm - 6:00 pm</p>"
+			var main_container_line_3_selection4 = "<p></br>Upcoming dates: April 23rd, July 31st and November 5th. Soteria Wellness, Appleton WI</p></br>"
+
+			//links for see more details button
+			var advPainBusterDetail = "http://northeasthealing.com/advanced-pain-busters/"
+
+			//button for registration
+			var tfhRegisterButton = "<a href='http://northeasthealing.com/registration/''><img class='size-full wp-image-3286 alignleft' src='http://northeasthealing.com/wp-content/uploads/2017/04/Register-now.png-pink-e1492096936735.png' alt='' width='100' height='50' />"
+			
+
+		
+		function changeMainContainer(){
+			if (document.getElementById("button1").checked == true) {
+				document.getElementById("title_main_container").innerHTML = "</br>" + document.getElementById("TFH Title").innerHTML
+				document.getElementById("desc_main_container").innerHTML = tf1;
+				document.getElementById("3rd line").innerHTML = main_container_line_3_selection1;
+				document.getElementById("more info button").style.display = "none";
+				document.getElementById("details button").onclick = function(){
+					location.href = "http://northeasthealing.com/registration/";
+				};
+			}
+			else if(document.getElementById("button2").checked == true) {
+				document.getElementById("title_main_container").innerHTML = "</br>" + document.getElementById("TFH Intro").innerHTML
+				document.getElementById("desc_main_container").innerHTML = tf2;
+				document.getElementById("3rd line").innerHTML = main_container_line_3_selection2;
+				document.getElementById("more info button").style = "block"
+				document.getElementById("details button").onclick = function(){
+					location.href = "http://northeasthealing.com/specialized-kinesiology-registration/";
+				};
+				document.getElementById("more info button").onclick = function(){
+					location.href = "http://northeasthealing.com/intro-touch-health/";
+				};
+			}
+			else if(document.getElementById("button3").checked == true){
+				document.getElementById("title_main_container").innerHTML = "</br>" + document.getElementById("Pain Buster").innerHTML
+				document.getElementById("desc_main_container").innerHTML = tf3;
+				document.getElementById("3rd line").innerHTML = main_container_line_3_selection3;
+				document.getElementById("more info button").style = "block"
+				document.getElementById("details button").onclick = function(){
+					location.href = "http://northeasthealing.com/specialized-kinesiology-registration/";
+				};
+				document.getElementById("more info button").onclick = function(){
+					location.href = "http://northeasthealing.com/pain-busters/";
+				};
+			}
+			else {
+				document.getElementById("title_main_container").innerHTML = "</br>" + document.getElementById("advanced").innerHTML
+				document.getElementById("desc_main_container").innerHTML = tf4;
+				document.getElementById("3rd line").innerHTML = main_container_line_3_selection4;
+				document.getElementById("more info button").style = "block"
+				document.getElementById("details button").onclick = function(){
+					location.href = "http://northeasthealing.com/specialized-kinesiology-registration/";
+				};
+				document.getElementById("more info button").onclick = function(){
+					location.href = "http://northeasthealing.com/advanced-pain-busters/";
+				};
+			}	
+
+		}
+
+
+	</script>
+
+</body>
+</html>
+
+
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
