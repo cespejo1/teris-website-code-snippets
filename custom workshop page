@@ -129,9 +129,9 @@ p{
 			var tf4 = "<p></br>Advanced Pain Busters is a power-packed, full-day workshop for students who are ready to transform their practice into a pain busting enterprise. </br>Prerequisite: Touch for Health Level I (no CE's available)</p>";
 
 			var main_container_line_3_selection1 = "<p></br>Click on workshop title for information on schedule and more</p></br>"
-			var main_container_line_3_selection2 = "<p></br>Upcoming dates: May 5th, June 2nd, July 7th and Sept. 8th at </br>National American University, Roseville, MN </br> 9 am - 1:00 pm</p>"
-			var main_container_line_3_selection3 = "<p></br>Upcoming dates: May 5th, June 2nd, July 7th and Sept. 8th at </br>National American University, Roseville, MN </br> 2 pm - 6:00 pm</p>"
-			var main_container_line_3_selection4 = "<p></br>Upcoming dates: April 23rd, July 31st and November 5th. Soteria Wellness, Appleton WI</p></br>"
+			var main_container_line_3_selection2 = "<p></br>Upcoming dates: July 7th and Sept. 8th at </br>National American University, Roseville, MN </br> 9 am - 1:00 pm</p>"
+			var main_container_line_3_selection3 = "<p></br>Upcoming dates: July 7th and Sept. 8th at </br>National American University, Roseville, MN </br> 2 pm - 6:00 pm</p>"
+			var main_container_line_3_selection4 = "<p></br>Upcoming dates: July 31st and November 5th. Soteria Wellness, Appleton WI</p></br>"
 
 			//links for see more details button
 			var advPainBusterDetail = "http://northeasthealing.com/advanced-pain-busters/"
@@ -199,5 +199,4 @@ p{
 
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
